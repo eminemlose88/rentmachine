@@ -15,11 +15,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy all code
 COPY . .
 
-# Make run script executable
-RUN chmod +x run.sh
-
 # Expose port (Streamlit)
 EXPOSE 8080
 
-# Command to run both
-CMD ["./run.sh"]
+# Command to run both using Python wrapper (avoids CRLF issues)
+CMD ["python", "run.py"]
