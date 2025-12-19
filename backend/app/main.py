@@ -5,7 +5,7 @@ from .db.mongodb import db
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from .services.monitor_service import monitor_service
 
-app = FastAPI(title=settings.PROJECT_NAME)
+app = FastAPI(title=settings.PROJECT_NAME, docs_url="/api/docs", openapi_url="/api/openapi.json")
 scheduler = AsyncIOScheduler()
 
 @app.on_event("startup")
