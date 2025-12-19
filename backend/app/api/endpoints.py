@@ -52,3 +52,8 @@ async def get_status(instance_id: str):
     # But for now, just return DB state
     doc["_id"] = str(doc["_id"])
     return doc
+
+@router.get("/instances")
+async def list_instances(user_id: str):
+    instances = await crud.get_user_instances(user_id)
+    return [inst.model_dump(by_alias=True) for inst in instances]
