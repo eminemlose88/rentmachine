@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+motor
+boto3
+streamlit
+python-dotenv
+pydantic
+pydantic-settings
+requests
+apscheduler
