@@ -14,11 +14,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy backend code
 COPY backend ./backend
-# In production, env vars should be injected by the platform, not copied from .env
-# But for structure we keep the folder structure
 
 # Expose port
-EXPOSE 8000
+EXPOSE 8080
 
 # Command to run
-CMD ["uvicorn", "backend.app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "backend.app.main:app", "--host", "0.0.0.0", "--port", "8080"]
